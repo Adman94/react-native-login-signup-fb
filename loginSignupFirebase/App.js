@@ -5,8 +5,13 @@
  * @format
  * @flow strict-local
  */
-
+import 'react-native-gesture-handler';
 import React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import Landing from './pages/Landing';
+import Signup from './pages/Signup';
+import Login from './pages/Login';
 import {
   SafeAreaView,
   StyleSheet,
@@ -26,22 +31,25 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
+// function Landing() {
+//   return (
+//     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+//       <Text>Home Screen</Text>
+//     </View>
+//   );
+// }
+
+const Stack = createStackNavigator();
+
 const App: () => React$Node = () => {
   return (
-    <View style={styles.container}>
-      <Image 
-          style={styles.logo} 
-          source={require('./img/logo.png')} 
-      />
-      <TouchableOpacity style={styles.button}>
-          <Text style={styles.text}>Sign Up</Text>
-      </TouchableOpacity>
-      <TouchableOpacity 
-          style={styles.button}
-      >
-          <Text style={styles.text}>Login</Text>
-      </TouchableOpacity>
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Landing" component={Landing} />
+        <Stack.Screen name="Signup" component={Signup} />
+        <Stack.Screen name="Login" component={Login} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 };
 
