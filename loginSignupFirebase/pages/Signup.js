@@ -1,6 +1,5 @@
 // SignUp.js
 import React, { Component } from 'react'
-import GoBack from '../components/GoBack'
 import {
   View,
   TouchableOpacity,
@@ -30,7 +29,6 @@ export default class SignUp extends Component {
   render() {
     return (
       <View style={styles.container}>
-      <GoBack navigation={this.props.navigation} />
         <TextInput
           style={styles.input}
           placeholder='Username'

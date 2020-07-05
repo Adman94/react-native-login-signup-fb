@@ -44,16 +44,62 @@ const Stack = createStackNavigator();
 const App: () => React$Node = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator screenOptions={{headerShown: false}}>
+      <Stack.Navigator>
+
         <Stack.Screen 
           name="Landing" 
-          component={Landing} 
+          component={Landing}
+          options={{
+            headerStyle: {
+              backgroundColor: '#c8e6c9',
+            },
+          }}
         />
+
         <Stack.Screen 
           name="Signup" 
-          component={Signup} 
+          component={Signup}
+          options={({navigation}) => (
+            {
+              headerStyle: {
+                backgroundColor: '#f0f4c3',
+              },
+              headerLeft: () => (
+                <TouchableOpacity
+                    onPress={() => {navigation.goBack()}}
+                    >
+                    <Image 
+                    source={require('./img/backbtn.png')}
+                    style={styles.back}
+                    />
+                </TouchableOpacity>
+              )
+            })
+          }
         />
-        <Stack.Screen name="Login" component={Login} />
+
+        <Stack.Screen 
+          name="Login" 
+          component={Login}
+          options={({navigation}) => (
+            {
+              headerStyle: {
+                backgroundColor: '#e5ffff',
+              },
+              headerLeft: () => (
+                <TouchableOpacity
+                    onPress={() => {navigation.goBack()}}
+                    >
+                    <Image 
+                    source={require('./img/backbtn.png')}
+                    style={styles.back}
+                    />
+                </TouchableOpacity>
+              )
+            })
+          }
+          
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
@@ -79,8 +125,13 @@ const styles = StyleSheet.create({
     backgroundColor: '#f0f4c3'
   },
   text: {
-    
     backgroundColor: '#c8a6c9'
+  },
+  back: {
+    padding: 15,
+    width: 40,
+    height: 40,
+    backgroundColor: 'transparent'
   }
 });
 
