@@ -44,9 +44,15 @@ const Stack = createStackNavigator();
 const App: () => React$Node = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="Landing" component={Landing} />
-        <Stack.Screen name="Signup" component={Signup} />
+      <Stack.Navigator screenOptions={{headerShown: false}}>
+        <Stack.Screen 
+          name="Landing" 
+          component={Landing} 
+        />
+        <Stack.Screen 
+          name="Signup" 
+          component={Signup} 
+        />
         <Stack.Screen name="Login" component={Login} />
       </Stack.Navigator>
     </NavigationContainer>
@@ -64,20 +70,17 @@ const styles = StyleSheet.create({
     width: '50%',
     height: '20%'
   },
-  button: {
+  btn: {
     padding: 15,
-    marginTop: 15,
     borderRadius: 25,
-    width: 300,
+    width: 50,
+    height: 50,
     justifyContent: 'center',
-    backgroundColor: '#97b498'
+    backgroundColor: '#f0f4c3'
   },
   text: {
-    color: '#e3f2fd',
-    fontSize: 20,
-    fontWeight: 'bold',
-    textAlign: 'center',
-    fontFamily: 'GillSans-Bold'
+    
+    backgroundColor: '#c8a6c9'
   }
 });
 

@@ -30,7 +30,7 @@ export default class Login extends Component {
       <View style={styles.container}>
         <TextInput
           style={styles.input}
-          placeholder='phone, username or email'
+          placeholder='Phone, username or email'
           autoCapitalize="none"
           placeholderTextColor='white'
           onChangeText={val => this.onChangeText('username', val)}
@@ -60,18 +60,18 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#b2fef7'
+    backgroundColor: '#e5ffff'
   },
   input: {
     width: 350,
     height: 55,
-    backgroundColor: '#80cbc4',
     margin: 10,
     padding: 8,
     color: 'white',
     borderRadius: 25,
     fontSize: 18,
     fontWeight: '500',
+    backgroundColor: '#b2dfdb',
   },
   button: {
     padding: 15,
@@ -79,7 +79,7 @@ const styles = StyleSheet.create({
     borderRadius: 25,
     width: 150,
     justifyContent: 'center',
-    backgroundColor: '#4f9a94'
+    backgroundColor: '#82ada9'
   },
   text: {
     color: 'black',

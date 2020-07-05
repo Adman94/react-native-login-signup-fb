@@ -1,10 +1,12 @@
 // SignUp.js
 import React, { Component } from 'react'
+import GoBack from '../components/GoBack'
 import {
   View,
   TouchableOpacity,
   TextInput,
   Text,
+  Image,
   StyleSheet
 } from 'react-native'
 
@@ -28,6 +30,7 @@ export default class SignUp extends Component {
   render() {
     return (
       <View style={styles.container}>
+      <GoBack navigation={this.props.navigation} />
         <TextInput
           style={styles.input}
           placeholder='Username'
@@ -101,5 +104,12 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     textAlign: 'center',
     fontFamily: 'GillSans-Bold'
-  }
+  },
+  back: {
+    padding: 15,
+    borderRadius: 25,
+    width: 50,
+    height: 50,
+    backgroundColor: '#f0f4c3'
+  },
 })
